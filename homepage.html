@@ -19,13 +19,14 @@
             <h2>Menu</h2>
         </div>
         <ul class="menu">
-            <li><a href="#">Home</a></li>
+            <li><a href="#" onclick="filterBooks('all')">Home</a></li>
             <li class="dropdown">
                 <a href="#" class="dropbtn">Stories ▾</a>
                 <div class="dropdown-content">
-                    <a href="#">Folklore</a>
-                    <a href="#">Legends</a>
-                    <a href="#">Fables</a>
+                    <a href="#" onclick="filterBooks('Folklore')">Folklore</a>
+                    <a href="#" onclick="filterBooks('Adventure')">Adventure</a>
+                    <a href="#" onclick="filterBooks('Legend')">Legend</a>
+                    <a href="#" onclick="filterBooks('Fable')">Fable</a>
                 </div>
             </li>
             <li><a href="#">About</a></li>
@@ -35,7 +36,7 @@
     
     <div class="main-content">
         <div class="book-grid">
-            <div class="book-card">
+            <div class="book-card" data-category="Folklore">
                 <div class="book-image"><img src="./media/Araw-sa-Palengke_540x.webp" alt="Sample Book"></div>
                 <div class="book-info">
                     <h3>Sample Book</h3>
@@ -43,7 +44,7 @@
                     <button class="read-btn">Read</button>
                 </div>
             </div>
-            <div class="book-card">
+            <div class="book-card" data-category="Adventure">
                 <div class="book-image"><img src="./media/ANG+BATING+MARAMING+BAWAL.webp" alt="Batang Maraming Bawal"></div>
                 <div class="book-info">
                     <h3>Batang Maraming Bawal</h3>
@@ -51,7 +52,7 @@
                     <button class="read-btn">Read</button>
                 </div>
             </div>
-            <div class="book-card">
+            <div class="book-card" data-category="Legend">
                 <div class="book-image"><img src="./media/pagong at matsing.webp" alt="Book Title 3"></div>
                 <div class="book-info">
                     <h3>Book Title 3</h3>
@@ -59,7 +60,7 @@
                     <button class="read-btn">Read</button>
                 </div>
             </div>
-            <div class="book-card">
+            <div class="book-card" data-category="Fable">
                 <div class="book-image"><img src="./media/Sari-Sari-Summers-Filipino-children's-book.webp" alt="Book Title 4"></div>
                 <div class="book-info">
                     <h3>Book Title 4</h3>
@@ -75,6 +76,22 @@
         function toggleSidebar() {
             document.getElementById('sidebar').classList.toggle('active');
             document.body.classList.toggle('sidebar-open');
+        }
+        
+        function filterBooks(category) {
+            const cards = document.querySelectorAll('.book-card');
+            
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Close sidebar after selecting
+            document.getElementById('sidebar').classList.remove('active');
+            document.body.classList.remove('sidebar-open');
         }
     </script>
 </body>
