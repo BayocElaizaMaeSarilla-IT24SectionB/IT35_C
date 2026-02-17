@@ -39,8 +39,17 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin: 5px;
 }
 
 button:hover {
     background-color: #45a049;
+}
+
+#quitBtn {
+    background-color: #f44336;
+}
+
+#quitBtn:hover {
+    background-color: #da190b;
 }

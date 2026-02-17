@@ -1,3 +1,13 @@
 document.getElementById('startBtn').addEventListener('click', function() {
-    alert('Welcome to the Philippine Story Book! Discover tales of Juan, Maria, and more...');
+    const btn = this;
+    btn.textContent = 'Loading...';
+    btn.disabled = true;
+    
+    setTimeout(function() {
+        window.location.href = 'homepage.html';
+    }, 1500);
+});
+
+document.getElementById('quitBtn').addEventListener('click', function() {
+    window.location.href = 'index.html';
 });
