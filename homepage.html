@@ -89,12 +89,10 @@
                 }
             });
             
-            // Close sidebar after selecting
             document.getElementById('sidebar').classList.remove('active');
             document.body.classList.remove('sidebar-open');
         }
         
-        // Add click handlers for Read buttons
         document.querySelectorAll('.read-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const title = this.getAttribute('data-title');

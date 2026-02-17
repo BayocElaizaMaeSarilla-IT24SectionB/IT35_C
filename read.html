@@ -54,6 +54,27 @@
         .back-btn:hover {
             background: #388E3C;
         }
+        
+        .lang-toggle {
+            display: inline-block;
+            margin-bottom: 20px;
+            margin-left: 10px;
+            padding: 10px 20px;
+            background: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .lang-toggle:hover {
+            background: #1976D2;
+        }
+        
+        .button-group {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -86,7 +107,10 @@
     
     <div class="main-content">
         <div class="read-container">
-            <a href="homepage.html" class="back-btn">← Back to Home</a>
+            <div class="button-group">
+                <a href="homepage.html" class="back-btn">← Back to Home</a>
+                <button id="langToggle" class="lang-toggle" onclick="toggleLanguage()">Switch to Tagalog</button>
+            </div>
             <img id="bookImage" class="read-image" src="" alt="">
             <h2 id="bookTitle" class="read-title"></h2>
             <div id="bookStory" class="read-story"></div>
@@ -94,21 +118,27 @@
     </div>
     
     <script src="function.js"></script>
+    <script src="language.js"></script>
     <script>
         function toggleSidebar() {
             document.getElementById('sidebar').classList.toggle('active');
             document.body.classList.toggle('sidebar-open');
         }
         
-        // Get URL parameters
         const params = new URLSearchParams(window.location.search);
         const title = params.get('title');
         const image = params.get('image');
-        const story = params.get('story');
+        let story = params.get('story');
         
         document.getElementById('bookTitle').textContent = title || 'Book Title';
         document.getElementById('bookImage').src = image || '';
-        document.getElementById('bookStory').textContent = story || 'No story available.';
+        
+        const translatedStory = getTranslation(title, 'english');
+        if (translatedStory) {
+            document.getElementById('bookStory').textContent = translatedStory;
+        } else {
+            document.getElementById('bookStory').textContent = story || 'No story available.';
+        }
     </script>
 </body>
 </html>
