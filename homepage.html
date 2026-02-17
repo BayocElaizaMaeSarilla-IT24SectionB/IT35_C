@@ -39,9 +39,9 @@
             <div class="book-card" data-category="Folklore">
                 <div class="book-image"><img src="./media/Araw-sa-Palengke_540x.webp" alt="Sample Book"></div>
                 <div class="book-info">
-                    <h3>Sample Book</h3>
+                    <h3>Araw sa Palengke   </h3>
                     <span class="book-category">Folklore</span>
-                    <button class="read-btn">Read</button>
+                    <button class="read-btn" data-title="Sample Book" data-image="./media/Araw-sa-Palengke_540x.webp" data-story="This is a sample story about Filipino folklore. Once upon a time in a small village, there lived a young child who discovered the wonders of local traditions. The story teaches us about the importance of respecting our culture and heritage.">Read</button>
                 </div>
             </div>
             <div class="book-card" data-category="Adventure">
@@ -49,23 +49,23 @@
                 <div class="book-info">
                     <h3>Batang Maraming Bawal</h3>
                     <span class="book-category">Adventure</span>
-                    <button class="read-btn">Read</button>
+                    <button class="read-btn" data-title="Batang Maraming Bawal" data-image="./media/ANG+BATING+MARAMING+BAWAL.webp" data-story="This is the story of a young boy who faced many challenges and learned valuable life lessons. Despite all the restrictions and things that were forbidden for him, he found ways to overcome obstacles and discover his true potential.">Read</button>
                 </div>
             </div>
             <div class="book-card" data-category="Legend">
-                <div class="book-image"><img src="./media/pagong at matsing.webp" alt="Book Title 3"></div>
+                <div class="book-image"><img src="./media/pagong at matsing.webp" alt="Pagong at Matsing"></div>
                 <div class="book-info">
-                    <h3>Book Title 3</h3>
+                    <h3>Pagong at Matsing</h3>
                     <span class="book-category">Legend</span>
-                    <button class="read-btn">Read</button>
+                    <button class="read-btn" data-title="Pagong at Matsing" data-image="./media/pagong at matsing.webp" data-story="This is a legendary tale from the Philippines about the tortoise and the monkey. Long ago, these two animals became friends but had different approaches to life. The story teaches us about cleverness, humility, and the consequences of our actions.">Read</button>
                 </div>
             </div>
             <div class="book-card" data-category="Fable">
-                <div class="book-image"><img src="./media/Sari-Sari-Summers-Filipino-children's-book.webp" alt="Book Title 4"></div>
+                <div class="book-image"><img src="./media/Sari-Sari-Summers-Filipino-children's-book.webp" alt="Sari Sari Summers"></div>
                 <div class="book-info">
-                    <h3>Book Title 4</h3>
+                    <h3>Sari Sari Summers</h3>
                     <span class="book-category">Fable</span>
-                    <button class="read-btn">Read</button>
+                    <button class="read-btn" data-title="Sari Sari Summers" data-image="./media/Sari-Sari-Summers-Filipino-children's-book.webp" data-story="This is a wonderful fable that teaches moral values through engaging characters and situations. Fables have always been an important part of Filipino storytelling tradition, and this story is no exception.">Read</button>
                 </div>
             </div>
         </div>
@@ -93,6 +93,21 @@
             document.getElementById('sidebar').classList.remove('active');
             document.body.classList.remove('sidebar-open');
         }
+        
+        // Add click handlers for Read buttons
+        document.querySelectorAll('.read-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const title = this.getAttribute('data-title');
+                const image = this.getAttribute('data-image');
+                const story = this.getAttribute('data-story');
+                
+                const encodedTitle = encodeURIComponent(title);
+                const encodedImage = encodeURIComponent(image);
+                const encodedStory = encodeURIComponent(story);
+                
+                window.location.href = `read.html?title=${encodedTitle}&image=${encodedImage}&story=${encodedStory}`;
+            });
+        });
     </script>
 </body>
 </html>

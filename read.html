@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Story - Philippine Story Book</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .read-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .read-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            margin-bottom: 30px;
+        }
+        
+        .read-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1b5e20;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .read-story {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+        
+        .back-btn:hover {
+            background: #388E3C;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+            <h1>Philippine Story Book</h1>
+        </div>
+    </header>
+    
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+        </div>
+        <ul class="menu">
+            <li><a href="homepage.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Stories ▾</a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="filterBooks('Folklore')">Folklore</a>
+                    <a href="#" onclick="filterBooks('Adventure')">Adventure</a>
+                    <a href="#" onclick="filterBooks('Legend')">Legend</a>
+                    <a href="#" onclick="filterBooks('Fable')">Fable</a>
+                </div>
+            </li>
+            <li><a href="#">About</a></li>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="read-container">
+            <a href="homepage.html" class="back-btn">← Back to Home</a>
+            <img id="bookImage" class="read-image" src="" alt="">
+            <h2 id="bookTitle" class="read-title"></h2>
+            <div id="bookStory" class="read-story"></div>
+        </div>
+    </div>
+    
+    <script src="function.js"></script>
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.body.classList.toggle('sidebar-open');
+        }
+        
+        // Get URL parameters
+        const params = new URLSearchParams(window.location.search);
+        const title = params.get('title');
+        const image = params.get('image');
+        const story = params.get('story');
+        
+        document.getElementById('bookTitle').textContent = title || 'Book Title';
+        document.getElementById('bookImage').src = image || '';
+        document.getElementById('bookStory').textContent = story || 'No story available.';
+    </script>
+</body>
+</html>
