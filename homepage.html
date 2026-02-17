@@ -17,10 +17,9 @@
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <h2>Menu</h2>
-            <span class="close-btn" onclick="toggleSidebar()">&times;</span>
         </div>
         <ul class="menu">
-            <li><a href=\"#\">Home</a></li>
+            <li><a href="#">Home</a></li>
             <li class="dropdown">
                 <a href="#" class="dropbtn">Stories ▾</a>
                 <div class="dropdown-content">
@@ -35,12 +34,47 @@
     </div>
     
     <div class="main-content">
+        <div class="book-grid">
+            <div class="book-card">
+                <div class="book-image"><img src="./media/Araw-sa-Palengke_540x.webp" alt="Sample Book"></div>
+                <div class="book-info">
+                    <h3>Sample Book</h3>
+                    <span class="book-category">Folklore</span>
+                    <button class="read-btn">Read</button>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="book-image"><img src="./media/ANG+BATING+MARAMING+BAWAL.webp" alt="Batang Maraming Bawal"></div>
+                <div class="book-info">
+                    <h3>Batang Maraming Bawal</h3>
+                    <span class="book-category">Adventure</span>
+                    <button class="read-btn">Read</button>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="book-image"><img src="./media/pagong at matsing.webp" alt="Book Title 3"></div>
+                <div class="book-info">
+                    <h3>Book Title 3</h3>
+                    <span class="book-category">Legend</span>
+                    <button class="read-btn">Read</button>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="book-image"><img src="./media/Sari-Sari-Summers-Filipino-children's-book.webp" alt="Book Title 4"></div>
+                <div class="book-info">
+                    <h3>Book Title 4</h3>
+                    <span class="book-category">Fable</span>
+                    <button class="read-btn">Read</button>
+                </div>
+            </div>
+        </div>
     </div>
     
     <script src="function.js"></script>
     <script>
         function toggleSidebar() {
             document.getElementById('sidebar').classList.toggle('active');
+            document.body.classList.toggle('sidebar-open');
         }
     </script>
 </body>
