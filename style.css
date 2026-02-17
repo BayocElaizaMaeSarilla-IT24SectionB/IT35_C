@@ -455,3 +455,29 @@ body.sidebar-open .header {
     margin: 0;
     letter-spacing: 0.5px;
 }
+
+/* Footer */
+.site-footer {
+    background: linear-gradient(90deg, #1b5e20 0%, #2e7d32 50%, #4CAF50 100%);
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    padding: 20px 30px;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+.site-footer p {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    font-size: 14px;
+}
+
+.site-footer a {
+    color: #a5d6a7;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
