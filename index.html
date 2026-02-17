@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1b5e20">
+    <meta name="description" content="Explore the rich folklore and legends of the Philippines">
     <title>Philippine Story Book</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="apple-touch-icon" href="./media/icon-192.png">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
@@ -29,6 +33,12 @@
             sparkle.style.width = (Math.random() * 4 + 2) + 'px';
             sparkle.style.height = sparkle.style.width;
             sparklesContainer.appendChild(sparkle);
+        }
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js')
+                .then(reg => console.log('SW registered'))
+                .catch(err => console.log('SW registration failed'));
         }
     </script>
 </body>
