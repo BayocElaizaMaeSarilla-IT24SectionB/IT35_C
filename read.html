@@ -4,78 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Read Story - Philippine Story Book</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .read-container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        
-        .read-image {
-            width: 100%;
-            max-height: 400px;
-            object-fit: contain;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            margin-bottom: 30px;
-        }
-        
-        .read-title {
-            font-size: 32px;
-            font-weight: 700;
-            color: #1b5e20;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-        
-        .read-story {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #333;
-            text-align: justify;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .back-btn {
-            display: inline-block;
-            margin-bottom: 20px;
-            padding: 10px 20px;
-            background: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 500;
-        }
-        
-        .back-btn:hover {
-            background: #388E3C;
-        }
-        
-        .lang-toggle {
-            display: inline-block;
-            margin-bottom: 20px;
-            margin-left: 10px;
-            padding: 10px 20px;
-            background: #2196F3;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-weight: 500;
-            cursor: pointer;
-        }
-        
-        .lang-toggle:hover {
-            background: #1976D2;
-        }
-        
-        .button-group {
-            margin-bottom: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/read.css">
 </head>
 <body>
     <header class="header">
@@ -94,10 +24,10 @@
             <li class="dropdown">
                 <a href="#" class="dropbtn">Stories ▾</a>
                 <div class="dropdown-content">
-                    <a href="#" onclick="filterBooks('Folklore')">Folklore</a>
-                    <a href="#" onclick="filterBooks('Adventure')">Adventure</a>
-                    <a href="#" onclick="filterBooks('Legend')">Legend</a>
-                    <a href="#" onclick="filterBooks('Fable')">Fable</a>
+                    <a href="homepage.html" onclick="filterBooks('Folklore')">Folklore</a>
+                    <a href="homepage.html" onclick="filterBooks('Adventure')">Adventure</a>
+                    <a href="homepage.html" onclick="filterBooks('Legend')">Legend</a>
+                    <a href="homepage.html" onclick="filterBooks('Fable')">Fable</a>
                 </div>
             </li>
             <li><a href="about.html">About</a></li>
@@ -108,7 +38,7 @@
     <div class="main-content">
         <div class="read-container">
             <div class="button-group">
-                <a href="homepage.html" class="back-btn">← Back to Home</a>
+                <a href="homepage.html" class="read-back-btn">← Back to Home</a>
                 <button id="langToggle" class="lang-toggle" onclick="toggleLanguage()">Switch to Tagalog</button>
             </div>
             <img id="bookImage" class="read-image" src="" alt="">
@@ -121,8 +51,8 @@
         <p>Philippine Story Book © 2026 — Made with ❤️ for Filipino readers everywhere.</p>
     </footer>
 
-    <script src="function.js"></script>
-    <script src="language.js"></script>
+    <script src="./js/function.js"></script>
+    <script src="./js/language.js"></script>
     <script>
         function toggleSidebar() {
             document.getElementById('sidebar').classList.toggle('active');

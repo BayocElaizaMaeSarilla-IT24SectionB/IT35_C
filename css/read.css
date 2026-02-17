@@ -1,0 +1,71 @@
+.read-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.read-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+}
+
+.read-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1b5e20;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.read-story {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.read-back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.read-back-btn:hover {
+    background: #388E3C;
+}
+
+.lang-toggle {
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    padding: 10px 20px;
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.lang-toggle:hover {
+    background: #1976D2;
+}
+
+.button-group {
+    margin-bottom: 20px;
+}

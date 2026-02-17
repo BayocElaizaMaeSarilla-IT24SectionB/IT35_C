@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Philippine Story Book</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <header class="header">
@@ -37,35 +37,43 @@
     <div class="main-content">
         <div class="book-grid">
             <div class="book-card" data-category="Folklore">
-                <div class="book-image"><img src="./media/Araw-sa-Palengke_540x.webp" alt="Sample Book"></div>
+                <div class="book-image">
+                    <img src="./media/Araw-sa-Palengke_540x.webp" alt="Araw sa Palengke">
+                </div>
                 <div class="book-info">
-                    <h3>Araw sa Palengke   </h3>
+                    <h3>Araw sa Palengke</h3>
                     <span class="book-category">Folklore</span>
-                    <button class="read-btn" data-title="Sample Book" data-image="./media/Araw-sa-Palengke_540x.webp" data-story="This is a sample story about Filipino folklore. Once upon a time in a small village, there lived a young child who discovered the wonders of local traditions. The story teaches us about the importance of respecting our culture and heritage.">Read</button>
+                    <button class="read-btn" data-title="Sample Book" data-image="./media/Araw-sa-Palengke_540x.webp" data-story="One bright morning, Aling Nena woke up early to go to the market.">Read</button>
                 </div>
             </div>
             <div class="book-card" data-category="Adventure">
-                <div class="book-image"><img src="./media/ANG+BATING+MARAMING+BAWAL.webp" alt="Batang Maraming Bawal"></div>
+                <div class="book-image">
+                    <img src="./media/ANG+BATING+MARAMING+BAWAL.webp" alt="Batang Maraming Bawal">
+                </div>
                 <div class="book-info">
                     <h3>Batang Maraming Bawal</h3>
                     <span class="book-category">Adventure</span>
-                    <button class="read-btn" data-title="Batang Maraming Bawal" data-image="./media/ANG+BATING+MARAMING+BAWAL.webp" data-story="This is the story of a young boy who faced many challenges and learned valuable life lessons. Despite all the restrictions and things that were forbidden for him, he found ways to overcome obstacles and discover his true potential.">Read</button>
+                    <button class="read-btn" data-title="Batang Maraming Bawal" data-image="./media/ANG+BATING+MARAMING+BAWAL.webp" data-story="There was a young boy who always heard the word Don't from his parents.">Read</button>
                 </div>
             </div>
             <div class="book-card" data-category="Legend">
-                <div class="book-image"><img src="./media/pagong at matsing.webp" alt="Pagong at Matsing"></div>
+                <div class="book-image">
+                    <img src="./media/pagong at matsing.webp" alt="Pagong at Matsing">
+                </div>
                 <div class="book-info">
                     <h3>Pagong at Matsing</h3>
                     <span class="book-category">Legend</span>
-                    <button class="read-btn" data-title="Pagong at Matsing" data-image="./media/pagong at matsing.webp" data-story="This is a legendary tale from the Philippines about the tortoise and the monkey. Long ago, these two animals became friends but had different approaches to life. The story teaches us about cleverness, humility, and the consequences of our actions.">Read</button>
+                    <button class="read-btn" data-title="Pagong at Matsing" data-image="./media/pagong at matsing.webp" data-story="One day, a tortoise and a monkey were walking by the river.">Read</button>
                 </div>
             </div>
             <div class="book-card" data-category="Fable">
-                <div class="book-image"><img src="./media/Sari-Sari-Summers-Filipino-children's-book.webp" alt="Sari Sari Summers"></div>
+                <div class="book-image">
+                    <img src="./media/Sari-Sari-Summers-Filipino-children's-book.webp" alt="Sari Sari Summers">
+                </div>
                 <div class="book-info">
                     <h3>Sari Sari Summers</h3>
                     <span class="book-category">Fable</span>
-                    <button class="read-btn" data-title="Sari Sari Summers" data-image="./media/Sari-Sari-Summers-Filipino-children's-book.webp" data-story="This is a wonderful fable that teaches moral values through engaging characters and situations. Fables have always been an important part of Filipino storytelling tradition, and this story is no exception.">Read</button>
+                    <button class="read-btn" data-title="Sari Sari Summers" data-image="./media/Sari-Sari-Summers-Filipino-children's-book.webp" data-story="Nora is a young girl who loves spending her summers with her lola.">Read</button>
                 </div>
             </div>
         </div>
@@ -75,41 +83,6 @@
         <p>Philippine Story Book © 2026 — Made with ❤️ for Filipino readers everywhere.</p>
     </footer>
 
-    <script src="function.js"></script>
-    <script>
-        function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('active');
-            document.body.classList.toggle('sidebar-open');
-        }
-        
-        function filterBooks(category) {
-            const cards = document.querySelectorAll('.book-card');
-            
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-            
-            document.getElementById('sidebar').classList.remove('active');
-            document.body.classList.remove('sidebar-open');
-        }
-        
-        document.querySelectorAll('.read-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const title = this.getAttribute('data-title');
-                const image = this.getAttribute('data-image');
-                const story = this.getAttribute('data-story');
-                
-                const encodedTitle = encodeURIComponent(title);
-                const encodedImage = encodeURIComponent(image);
-                const encodedStory = encodeURIComponent(story);
-                
-                window.location.href = `read.html?title=${encodedTitle}&image=${encodedImage}&story=${encodedStory}`;
-            });
-        });
-    </script>
+    <script src="./js/function.js"></script>
 </body>
 </html>
