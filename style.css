@@ -5,20 +5,15 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: #f5f5f5;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .container {
-    text-align: center;
-    padding: 80px 50px 50px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 h1 {
@@ -40,10 +35,13 @@ button {
     border-radius: 5px;
     cursor: pointer;
     margin: 5px;
+    transition: all 0.3s;
 }
 
 button:hover {
     background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 button:disabled {
@@ -90,9 +88,10 @@ button:disabled {
     top: 0;
     width: 250px;
     height: 100%;
-    background-color: #333;
+    background: linear-gradient(180deg, #2e7d32 0%, #1b5e20 100%);
     transition: left 0.3s;
     z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar.active {
@@ -104,14 +103,23 @@ button:disabled {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #222;
+    background-color: #1b5e20;
     color: white;
+}
+
+.sidebar-header h2 {
+    font-size: 20px;
 }
 
 .close-btn {
     font-size: 30px;
     cursor: pointer;
     color: white;
+    transition: transform 0.3s;
+}
+
+.close-btn:hover {
+    transform: scale(1.2);
 }
 
 .menu {
@@ -121,7 +129,7 @@ button:disabled {
 }
 
 .menu li {
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .menu li a {
@@ -129,11 +137,21 @@ button:disabled {
     padding: 15px 20px;
     color: white;
     text-decoration: none;
-    transition: background 0.3s;
+    transition: all 0.3s;
+    font-size: 16px;
 }
 
 .menu li a:hover {
-    background-color: #4CAF50;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-left: 30px;
+}
+
+.menu li:last-child a {
+    background-color: #c62828;
+}
+
+.menu li:last-child a:hover {
+    background-color: #b71c1c;
 }
 
 /* Dropdown Styles */
@@ -146,9 +164,10 @@ button:disabled {
     position: absolute;
     left: 100%;
     top: 0;
-    background-color: #444;
+    background: linear-gradient(180deg, #388e3c 0%, #2e7d32 100%);
     min-width: 150px;
     z-index: 1;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .dropdown:hover .dropdown-content {
@@ -157,11 +176,12 @@ button:disabled {
 
 .dropdown-content a {
     padding: 12px 16px;
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .dropdown-content a:hover {
-    background-color: #4CAF50;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-left: 25px;
 }
 
 .dropbtn {
@@ -169,16 +189,179 @@ button:disabled {
 }
 
 .menu-toggle {
-    position: fixed;
-    top: 20px;
-    left: 20px;
     font-size: 24px;
     cursor: pointer;
-    color: #333;
+    color: white;
     padding: 10px;
-    z-index: 999;
+    transition: transform 0.3s;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
 }
 
 .main-content {
     width: 100%;
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(90deg, #1b5e20 0%, #2e7d32 50%, #4CAF50 100%);
+    color: white;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #fff 0%, #e8f5e9 50%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+}
+
+.menu-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: white;
+    font-size: 22px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.menu-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    transition: all 0.3s;
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.nav-link.active {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.nav-link.logout {
+    background: #c62828;
+}
+
+.nav-link.logout:hover {
+    background: #b71c1c;
+}
+
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #1b5e20;
+    min-width: 140px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.nav-dropdown:hover .nav-dropdown-content {
+    display: block;
+}
+
+.nav-dropdown-content a {
+    display: block;
+    padding: 10px 14px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-dropdown-content a:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Media Grid */
+.media-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.media-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-left: 4px solid #4CAF50;
+}
+
+.media-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-left-color: #2e7d32;
+}
+
+.media-placeholder {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8f5e9;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.media-card h3 {
+    color: #2e7d32;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.5px;
 }
