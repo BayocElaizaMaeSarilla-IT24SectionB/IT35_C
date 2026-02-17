@@ -1,0 +1,120 @@
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+.about-hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+    border-radius: 16px;
+    margin-bottom: 40px;
+}
+
+.about-hero h2 {
+    font-size: 32px;
+    color: #1b5e20;
+    margin-bottom: 12px;
+}
+
+.about-hero p {
+    font-size: 18px;
+    color: #2e7d32;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about-section {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #4CAF50;
+}
+
+.about-section h3 {
+    color: #1b5e20;
+    font-size: 22px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-section h3 span {
+    font-size: 28px;
+}
+
+.about-section p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.about-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-section ul li {
+    padding: 10px 0;
+    color: #555;
+    font-size: 16px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-section ul li:last-child {
+    border-bottom: none;
+}
+
+.about-section ul li span {
+    font-size: 20px;
+}
+
+.category-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.category-tag {
+    background: #4CAF50;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 30px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.back-btn:hover {
+    background: #388E3C;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.about-footer {
+    text-align: center;
+    padding: 30px 0;
+    color: #999;
+    font-size: 14px;
+}
