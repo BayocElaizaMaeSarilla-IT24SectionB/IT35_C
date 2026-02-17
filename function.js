@@ -1,11 +1,15 @@
 document.getElementById('startBtn').addEventListener('click', function() {
     const btn = this;
-    btn.textContent = 'Loading...';
-    btn.disabled = true;
+    const loader = document.getElementById('loader');
+    const loadingText = document.getElementById('loadingText');
+    
+    btn.style.display = 'none';
+    loader.style.display = 'block';
+    loadingText.style.display = 'block';
     
     setTimeout(function() {
         window.location.href = 'homepage.html';
-    }, 1500);
+    }, 2000);
 });
 
 document.getElementById('quitBtn').addEventListener('click', function() {
