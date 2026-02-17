@@ -112,3 +112,125 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 20px 15px;
+        margin: 0 10px;
+    }
+
+    .about-hero {
+        padding: 30px 15px;
+        border-radius: 12px;
+    }
+
+    .about-hero h2 {
+        font-size: 24px;
+    }
+
+    .about-hero p {
+        font-size: 15px;
+    }
+
+    .about-section {
+        padding: 20px 15px;
+        border-radius: 10px;
+        border-left: 3px solid #4CAF50;
+    }
+
+    .about-section h3 {
+        font-size: 18px;
+        flex-wrap: wrap;
+    }
+
+    .about-section h3 span {
+        font-size: 22px;
+    }
+
+    .about-section p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .about-section ul li {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+
+    .about-section ul li span {
+        font-size: 16px;
+    }
+
+    .category-tags {
+        gap: 8px;
+    }
+
+    .category-tag {
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+
+    .back-btn {
+        padding: 10px 24px;
+        font-size: 14px;
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-container {
+        padding: 15px 10px;
+    }
+
+    .about-hero {
+        padding: 25px 12px;
+    }
+
+    .about-hero h2 {
+        font-size: 20px;
+    }
+
+    .about-hero p {
+        font-size: 14px;
+    }
+
+    .about-section {
+        padding: 15px 12px;
+        margin-bottom: 15px;
+    }
+
+    .about-section h3 {
+        font-size: 16px;
+    }
+
+    .about-section ul li {
+        font-size: 13px;
+        flex-wrap: wrap;
+    }
+
+    .category-tag {
+        padding: 5px 12px;
+        font-size: 11px;
+    }
+
+    .back-btn {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) {
+    .back-btn:active {
+        background: #388E3C;
+        transform: scale(0.98);
+    }
+
+    .category-tag:active {
+        background: #388E3C;
+    }
+}
+
